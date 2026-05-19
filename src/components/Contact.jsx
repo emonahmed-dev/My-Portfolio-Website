@@ -143,7 +143,7 @@ function Contact() {
               <div className="mt-8 flex space-x-4">
                 <a
                   className="p-2 border border-slate-400 dark:border-slate-500 rounded-md text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-                  href="https://github.com/emon-ahmed-60"
+                  href="https://github.com/emonahmed-dev"
                 >
                   <svg
                     aria-hidden="true"
@@ -160,7 +160,7 @@ function Contact() {
                 </a>
                 <a
                   className="p-2 border border-slate-400 dark:border-slate-500 rounded-md text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-                  href="https://www.linkedin.com/in/emon--ahmed/"
+                  href="https://www.linkedin.com/in/emonahmed-dev/"
                 >
                   <svg
                     aria-hidden="true"
@@ -173,7 +173,7 @@ function Contact() {
                 </a>
                 <a
                   className="p-2 border border-slate-400 dark:border-slate-500 rounded-md text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-                  href="https://x.com/MdEmon416961?t=Qx0TLN95Ia-AROLIOG2ZlQ&s=09"
+                  href="https://x.com/emonahmed_dev"
                 >
                   <svg
                     aria-hidden="true"
@@ -186,7 +186,7 @@ function Contact() {
                 </a>
                 <a
                   className="p-2 border border-slate-400 dark:border-slate-500 rounded-md text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-                  href="https://www.facebook.com/md.emon.692971"
+                  href="https://www.facebook.com/emonahmed.dev"
                 >
                   <svg
                     aria-hidden="true"

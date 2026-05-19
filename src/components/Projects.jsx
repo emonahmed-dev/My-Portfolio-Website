@@ -10,7 +10,7 @@ function Projects() {
         "BookCourier is a library delivery management system where users can request book pickup or delivery from their nearby libraries. The system helps students, researchers, and readers borrow and return books without physically visiting the library.",
       image: "https://i.ibb.co.com/pvpPbRj0/Screenshot-2025-12-25-175630.png",
       liveLink: "https://bookcourier-5924d.web.app/",
-      codeLink: "https://github.com/emon-ahmed-60/BookCourier-client.git",
+      codeLink: "https://github.com/emonahmed-dev/BookCourier-client.git",
     },
     {
       title: "ToyStore",
@@ -19,7 +19,7 @@ function Projects() {
         "ToyStore is a fully functional e-commerce solution designed to manage online sales of toys. The platform efficiently handles product display, user authentication, shopping cart management, and the checkout process.",
       image: "https://i.ibb.co.com/pvb6Cn50/Screenshot-2025-12-08-230038.png",
       liveLink: "https://cosmic-creponne-24a271.netlify.app/",
-      codeLink: "https://github.com/emon-ahmed-60/Toy-store.git",
+      codeLink: "https://github.com/emonahmed-dev/Toy-store.git",
     },
     {
       title: "Spotify-Clone",
@@ -28,7 +28,7 @@ function Projects() {
         "This project is designed to mimic the user interface and core functionalities of Spotify. Through this, users will experience song play, pause, volume control, and playlist navigation. This is an attempt to showcase my front-end skills.",
       image: "https://i.ibb.co.com/m5dJrgLp/Screenshot-2025-12-08-160806.png",
       liveLink: "https://spotifycloneing.netlify.app/",
-      codeLink: "https://github.com/emon-ahmed-60/Spotify-Clone.git",
+      codeLink: "https://github.com/emonahmed-dev/Spotify-Clone.git",
     },
     {
       title: "Home Service",
@@ -37,7 +37,7 @@ function Projects() {
         "A modern platform and reliable household services in your local area. Built with a user-friendly design and effective search functionality.",
       image: "https://i.ibb.co.com/chDHH48K/home-service.png",
       liveLink: "https://home-service-tau.vercel.app/",
-      codeLink: "https://github.com/emon-ahmed-60/HomeService.git",
+      codeLink: "https://github.com/emonahmed-dev/HomeService.git",
     },
   ];
 

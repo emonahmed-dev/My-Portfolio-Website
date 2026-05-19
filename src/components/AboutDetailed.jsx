@@ -2,7 +2,10 @@ import me from "../assets/Emon-Ahmed.webp";
 import { motion } from "framer-motion";
 function AboutDetailed() {
   return (
-    <section id="about" className="bg-background-light dark:bg-background-dark font-sans text-slate-700 dark:text-slate-300 antialiased">
+    <section
+      id="about"
+      className="bg-background-light dark:bg-background-dark font-sans text-slate-700 dark:text-slate-300 antialiased"
+    >
       <div className="relative min-h-screen">
         <main className="relative px-6 sm:px-8 lg:px-12 py-16 sm:py-20 md:py-28">
           <div className="max-w-6xl mx-auto">
@@ -33,13 +36,13 @@ function AboutDetailed() {
                       </strong>
                       . I am a Front-End Developer, with a good knowledge of
                       HTML/CSS, React JS, Node JS, Javascript, Firebase, Heroku
-                      for deployment, and also Expertise with Bootstrap, Tailwind
-                      CSS, and Sass/Scss.
+                      for deployment, and also Expertise with Bootstrap,
+                      Tailwind CSS, and Sass/Scss.
                     </p>
                     <p>
                       I am experienced with designing and developing complex
-                      frontend flows and components and converting any design file
-                      to HTML CSS with a fully{" "}
+                      frontend flows and components and converting any design
+                      file to HTML CSS with a fully{" "}
                       <strong className="text-slate-800 dark:text-slate-200">
                         responsive design
                       </strong>
@@ -59,7 +62,7 @@ function AboutDetailed() {
                       <a
                         aria-label="GitHub"
                         className="block w-10 h-10 icon-github bg-slate-500 dark:bg-slate-400 hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors duration-200"
-                        href="https://github.com/emon-ahmed-60"
+                        href="https://github.com/emonahmed-dev"
                         target="_blank"
                         style={{
                           maskSize: "60%",
@@ -75,7 +78,7 @@ function AboutDetailed() {
                       ></a>
                       <a
                         target="_blank"
-                        href="https://www.linkedin.com/in/emon--ahmed/"
+                        href="https://www.linkedin.com/in/emonahmed-dev/"
                         aria-label="LinkedIn"
                         className="block w-10 h-10 icon-linkedin bg-slate-500 dark:bg-slate-400 hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors duration-200"
                         style={{
@@ -91,9 +94,10 @@ function AboutDetailed() {
                         }}
                       ></a>
                       <a
+                        target="_blank"
                         aria-label="Twitter"
                         className="block w-10 h-10 icon-twitter bg-slate-500 dark:bg-slate-400 hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors duration-200"
-                        href="https://x.com/MdEmon416961?t=Qx0TLN95Ia-AROLIOG2ZlQ&s=09"
+                        href="https://x.com/emonahmed_dev"
                         style={{
                           maskSize: "60%",
                           maskRepeat: "no-repeat",
@@ -107,9 +111,10 @@ function AboutDetailed() {
                         }}
                       ></a>
                       <a
+                      target="_blank"
                         aria-label="Facebook"
                         className="block w-10 h-10 icon-facebook bg-slate-500 dark:bg-slate-400 hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors duration-200"
-                        href="https://www.facebook.com/md.emon.692971"
+                        href="https://www.facebook.com/emonahmed.dev"
                         style={{
                           maskSize: "60%",
                           maskRepeat: "no-repeat",
@@ -130,8 +135,6 @@ function AboutDetailed() {
           </div>
         </main>
       </div>
-
-
     </section>
   );
 }
