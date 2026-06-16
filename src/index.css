@@ -7,6 +7,7 @@
     @apply font-sans;
   }
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -32,13 +33,211 @@ html {
   position: absolute;
   bottom: -4px;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
   background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-  transition: width 0.3s ease-in-out;
+  transition: transform 0.28s ease-in-out;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 100%;
+  transform: scaleX(1);
 }
+
+.btn-action {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-action::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.18), rgba(6, 182, 212, 0.18), rgba(59, 130, 246, 0.18));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.btn-action:hover::before {
+  opacity: 1;
+}
+
+.btn-action-primary {
+  background: linear-gradient(90deg, #0ea5e9, #06b6d4);
+}
+
+.btn-action-secondary {
+  background: rgba(148, 163, 184, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.18);
+}
+
+.featured-glow {
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.12), 0 0 80px rgba(56, 189, 248, 0.08);
+}
+
+.premium-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(56, 189, 248, 0.12);
+}
+
+/* Glassmorphism effects */
+.glass-effect {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.glass-effect-strong {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+/* Gradient border animation */
+@keyframes gradient-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-border {
+  background: linear-gradient(
+    270deg,
+    #3b82f6,
+    #06b6d4,
+    #3b82f6
+  );
+  background-size: 200% 200%;
+  animation: gradient-border 6s ease infinite;
+}
+
+/* Card hover lift effect */
+@keyframes lift {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hover-lift:hover {
+  animation: lift 0.6s ease-out;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Image zoom effect */
+.image-zoom {
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-zoom:hover img {
+  transform: scale(1.1) rotate(1deg);
+}
+
+/* Smooth focus-visible outline */
+@layer components {
+  .smooth-focus {
+    @apply transition-all duration-200 outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-slate-900;
+  }
+}
+
+/* Responsive text animation */
+@media (max-width: 640px) {
+  .project-card-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* Tech stack logo glow animation */
+@keyframes tech-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3);
+  }
+}
+
+.tech-badge {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-badge:hover {
+  animation: tech-glow 2s ease-in-out;
+}
+
+/* Tech badge shine effect */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.tech-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shine 0.5s ease-in-out;
+}
+
+/* Smooth focus-visible outline for accessibility */
+@layer components {
+  .tech-stack-container {
+    @apply flex flex-wrap items-center gap-3 sm:gap-4;
+  }
+
+  .tech-logo-responsive {
+    @apply w-4 sm:w-5 h-4 sm:h-5 object-contain;
+  }
+}
+
+/* Pulsing glow for attention */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 16px currentColor);
+  }
+}
+
+.tech-pulse {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+

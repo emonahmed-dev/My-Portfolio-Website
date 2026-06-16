@@ -6,31 +6,31 @@ function Services() {
         {
             icon: <FaCode className="text-4xl" />,
             title: 'Frontend Development',
-            description: 'Building responsive and interactive web applications using modern frameworks like React, with clean code and best practices.',
+            description: 'Creating polished React and Next.js experiences with clean architecture and production-ready UI.',
             color: '#3b82f6',
         },
         {
             icon: <FaPaintBrush className="text-4xl" />,
-            title: 'UI/UX Implementation',
-            description: 'Transforming designs into pixel-perfect interfaces with smooth animations, ensuring excellent user experience across all devices.',
+            title: 'Responsive UI Development',
+            description: 'Building layouts that adapt seamlessly across devices with crisp typography and spacing.',
             color: '#8b5cf6',
         },
         {
             icon: <FaServer className="text-4xl" />,
-            title: 'Backend Integration',
-            description: 'Seamless API integration and backend connectivity, working with RESTful services and modern backend technologies.',
+            title: 'API Integration',
+            description: 'Connecting frontend interfaces to backend services with smooth data flows and reliable error handling.',
             color: '#10b981',
         },
         {
             icon: <FaMobileAlt className="text-4xl" />,
-            title: 'Responsive Design',
-            description: 'Creating mobile-first, responsive layouts that work flawlessly on all screen sizes, from smartphones to desktops.',
+            title: 'Performance Optimization',
+            description: 'Refining load performance, bundle size, and runtime responsiveness for production-ready apps.',
             color: '#f59e0b',
         },
     ]
 
     return (
-        <section id="services" className="w-full py-16 sm:py-20 md:py-28 bg-background-light dark:bg-background-dark">
+        <section id="services" className="w-full py-14 sm:py-16 md:py-20 bg-background-light dark:bg-background-dark">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -51,20 +51,15 @@ function Services() {
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                            className="service-card group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300"
+                            transition={{ duration: 0.4, delay: index * 0.08 }}
+                            whileHover={{ y: -6 }}
+                            className="group relative bg-slate-900/90 p-6 rounded-3xl border border-slate-700/70 shadow-sm hover:shadow-md transition-all duration-300"
                         >
                             {/* Icon Container */}
-                            <div
-                                className="mb-6 inline-flex p-4 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 transition-all duration-300 group-hover:scale-110"
-                                style={{
-                                    boxShadow: `0 4px 14px ${service.color}20`,
-                                }}
-                            >
+                            <div className="mb-6 inline-flex p-4 rounded-xl bg-slate-900/95 transition-all duration-300 group-hover:scale-105" style={{ boxShadow: `0 12px 30px ${service.color}25` }}>
                                 <div style={{ color: service.color }}>
                                     {service.icon}
                                 </div>
@@ -80,13 +75,6 @@ function Services() {
                                 {service.description}
                             </p>
 
-                            {/* Decorative gradient border on hover */}
-                            <div
-                                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                                style={{
-                                    background: `linear-gradient(135deg, ${service.color}15, transparent)`,
-                                }}
-                            />
                         </motion.div>
                     ))}
                 </div>
