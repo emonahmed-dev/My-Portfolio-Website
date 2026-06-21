@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import FloatingProfile from "./components/FloatingProfile";
 import AboutDetailed from "./components/AboutDetailed";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
@@ -20,7 +19,6 @@ function App() {
         <Services />
         <Contact />
       </main>
-      <FloatingProfile />
     </div>
   );
 }

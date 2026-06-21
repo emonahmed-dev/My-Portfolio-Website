@@ -11,12 +11,12 @@ function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navLinks = [
-    { name: 'HOME', to: 'home' },
-    { name: 'ABOUT', to: 'about' },
-    { name: 'PROJECTS', to: 'projects' },
-    { name: 'SKILLS', to: 'skills' },
-    { name: 'SERVICES', to: 'services' },
-    { name: 'CONTACT', to: 'contact' },
+    { name: 'Home', to: 'home' },
+    { name: 'About', to: 'about' },
+    { name: 'Projects', to: 'projects' },
+    { name: 'Skills', to: 'skills' },
+    { name: 'Services', to: 'services' },
+    { name: 'Contact', to: 'contact' },
   ];
 
   const handleScrollToHome = () => {
@@ -74,23 +74,26 @@ function Header() {
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-      className={`w-full sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-slate-950/92 shadow-2xl shadow-slate-950/30 backdrop-blur-xl border-b border-white/10'
-          : 'bg-white/90 dark:bg-gray-950/95 backdrop-blur-md shadow-lg'
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      className={`w-full sticky top-0 z-50 transition-all duration-500 navbar-glass ${
+        isScrolled ? 'navbar-glass--scrolled' : 'navbar-glass--top'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex justify-between items-center pb-4 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-[70px]">
+
+          {/* Logo */}
           <button
-            className="bg-gray-900 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl font-display cursor-pointer transition-transform hover:scale-110"
+            className="navbar-logo"
             onClick={handleScrollToHome}
             aria-label="Scroll to home section"
           >
-            E
+            <span className="navbar-logo-letter">E</span>
+            <span className="navbar-logo-wordmark">mon Ahmed</span>
           </button>
-          <nav className="hidden md:flex items-center space-x-8">
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -98,27 +101,50 @@ function Header() {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className={`nav-link text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors cursor-pointer ${activeSection === link.to ? 'active' : ''}`}
+                className={`nav-link nav-link--glass text-sm font-medium transition-colors cursor-pointer px-4 py-2 rounded-full ${
+                  activeSection === link.to ? 'active' : ''
+                }`}
                 onClick={() => setActiveSection(link.to)}
               >
                 {link.name}
               </Link>
             ))}
           </nav>
-          <button className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
-            <span className="material-icons-outlined text-gray-900 dark:text-gray-200">
-              {isMenuOpen ? 'close' : 'menu'}
-            </span>
-          </button>
-        </div>
 
-        {isMenuOpen && (
-          <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="md:hidden mt-4 flex flex-col space-y-4 overflow-hidden"
-          >
+          {/* CTA + Mobile Toggle */}
+          <div className="flex items-center gap-3">
+            <Link
+              to="contact"
+              smooth={true}
+              offset={-80}
+              duration={500}
+              className="hidden md:inline-flex navbar-cta cursor-pointer"
+            >
+              Hire Me
+            </Link>
+            <button
+              className="md:hidden navbar-hamburger"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <span className="material-icons-outlined text-slate-200 text-[22px]">
+                {isMenuOpen ? 'close' : 'menu'}
+              </span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <motion.nav
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: 'auto', opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          className="md:hidden overflow-hidden border-t border-white/[0.06]"
+        >
+          <div className="container mx-auto px-4 sm:px-6 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -126,7 +152,9 @@ function Header() {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className={`nav-link text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors block py-2 cursor-pointer ${activeSection === link.to ? 'active' : ''}`}
+                className={`nav-link nav-link--glass text-sm font-medium block py-2.5 px-4 rounded-xl transition-colors cursor-pointer ${
+                  activeSection === link.to ? 'active' : ''
+                }`}
                 onClick={() => {
                   setActiveSection(link.to);
                   setIsMenuOpen(false);
@@ -135,9 +163,9 @@ function Header() {
                 {link.name}
               </Link>
             ))}
-          </motion.nav>
-        )}
-      </div>
+          </div>
+        </motion.nav>
+      )}
     </motion.header>
   );
 }
